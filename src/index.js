@@ -16,7 +16,7 @@ app.set('views', join(__dirname, 'views'));
 app.engine('.hbs', engine({
     defaultLayout:'main',
     layoutsDir: join(app.get('views'), 'layouts'),
-    layoutsDir: join(app.get('views'), 'partials'),
+    partialsDir: join(app.get('views'), 'partials'),
     extname:'.hbs'
 
 }));
@@ -30,7 +30,7 @@ app.use(express.json());
 
 //Routes
 app.get('/', (req, res)=> {
-    res.json({"message":"Hola"})
+    res.render('index')
 });
 
 //Public Files
